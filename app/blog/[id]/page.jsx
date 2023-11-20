@@ -38,4 +38,4 @@ export async function generateStaticParams() {
   }));
 }
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
