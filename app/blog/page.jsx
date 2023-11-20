@@ -1,5 +1,9 @@
 export default async function Page() {
-  const responsive = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const responsive = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    next: {
+      revalidate: 30,
+    },
+  });
   const data = await responsive.json();
   console.log(data);
   return (
@@ -8,5 +12,3 @@ export default async function Page() {
     </main>
   );
 }
-
-export const relative = 30;
